@@ -6,19 +6,23 @@
 // // 12821 -> да
 // // 23432 -> да
 
-// string number = Console.ReadLine();
-// int numberLength = number.Length;
-// int beginIndex = 0;
+Console.Write ("Input test number: ");
+string number = Console.ReadLine();
+int numberLength = number.Length;
+int beginIndex = 0;
 
-// for (int i = (numberLength-1); i >= 0; i--)
-// {
-//     if (number[i] == number[beginIndex]) beginIndex++;
+for (int i = (numberLength-1); i >= 0; i--)
+{
+    if (number[i] == number[beginIndex]) beginIndex++;
     
-//     else break;
-// }
+    else break;
+}
 
-// if (beginIndex == numberLength) Console.WriteLine($"The number={number} is Palindrom =)");
-// else Console.WriteLine($"The number = {number} is none Palindrome =)");
+if (beginIndex == numberLength) Console.WriteLine($"The number={number} is Palindrom =)");
+else Console.WriteLine($"The number = {number} is none Palindrome =)");
+
+
+
 
 // // Задача 21
 // // Напишите программу, которая принимает на вход координаты двух точек и находит расстояние между ними в 3D пространстве.
