@@ -14,8 +14,6 @@ int beginIndex = 0;
 for (int i = (numberLength-1); i >= 0; i--)
 {
     if (number[i] == number[beginIndex]) beginIndex++;
-    
-    else break;
 }
 
 if (beginIndex == numberLength) Console.WriteLine($"The number={number} is Palindrom =)");
