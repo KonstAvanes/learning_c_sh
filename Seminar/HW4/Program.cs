@@ -1,13 +1,17 @@
 ﻿Console.Clear();
-// // Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
-// // 3, 5 -> 243 (3⁵)
-// // 2, 4 -> 16
-// Console.Write("Input number: ");
-// int number = Convert.ToInt32(Console.ReadLine());
-// Console.Write($"Input power of {number}: ");
-// int power = Convert.ToInt32(Console.ReadLine());
-// Console.WriteLine($"Number {number} in power {power} = {Math.Pow(number, power)}");
-
+// Задача 25: Напишите цикл, который принимает на вход два числа (A и B) и возводит число A в натуральную степень B.
+// 3, 5 -> 243 (3⁵)
+// 2, 4 -> 16
+Console.Write("Input number: ");
+int number = Convert.ToInt32(Console.ReadLine());
+Console.Write($"Input power of {number}: ");
+int power = Convert.ToInt32(Console.ReadLine());
+int numberPower = 1;
+//Console.WriteLine($"Number {number} in power {power} = {Math.Pow(number, power)}"); Incorrect variant
+for (int i = 1; i <= power; i++) {
+    numberPower *= number;
+}
+Console.WriteLine($"Number {number} in power {power} = {numberPower}");
 
 
 
