@@ -42,6 +42,23 @@ for (int temp = decimalNumber; temp !=0; decimalNumber = decimalNumber/2, temp =
 for (int i = binNumber.Length-1; i >=0; Console.Write(binNumber[i]), i--); //Mirror output of binNumber for corrcted view
 
 
+// // Variant recursion.
+// int a = 13;
+
+// void ToBin(int n)
+// {
+//     if(n==0)
+//     {
+//         return;
+//     }
+    
+//     ToBin(n/2);
+//     Console.Write(n%2);
+// }
+// ToBin(a);
+
+
+
 
 
 // // Задача 43: Напишите программу, которая найдёт точку пересечения двух прямых, заданных уравнениями y = k1 * x + b1, y = k2 * x + b2; значения b1, k1, b2 и k2 задаются пользователем.
