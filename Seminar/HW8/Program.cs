@@ -1,6 +1,6 @@
-﻿Console.Clear(); // Clear the screen
-// Methods for Homework exersices
+﻿Console.Clear(); // Clear the screen, for all exersices
 
+// Methods for Homework exersices
 int[,] GetArray(int m, int n) // Create array method
 {
     int[,] matrix = new int[m, n];
@@ -8,15 +8,15 @@ int[,] GetArray(int m, int n) // Create array method
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
         {
-            matrix[i, j] = new Random().Next(6);
+            matrix[i, j] = new Random().Next(100); // Value of max random numbers
         }
     }
     return matrix;
 }
 
-void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
+void PrintArray(int[,] matrix, string nameOfMatrix) // Print array method
 {
-    System.Console.WriteLine($"{nameofmatrix} [{matrix.GetLength(0)}, {matrix.GetLength(1)}]:");
+    System.Console.WriteLine($"{nameOfMatrix} [{matrix.GetLength(0)}, {matrix.GetLength(1)}]:");
     for (int i = 0; i < matrix.GetLength(0); i++)
     {
         for (int j = 0; j < matrix.GetLength(1); j++)
@@ -31,15 +31,51 @@ void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
 
 
 
-// Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
-// Например, задан массив:
-// 1 4 7 2
-// 5 9 2 3
-// 8 4 2 4
-// В итоге получается вот такой массив:
-// 7 4 2 1
-// 9 5 3 2
-// 8 4 4 2
+// // Задача 54: Задайте двумерный массив. Напишите программу, которая упорядочит по убыванию элементы каждой строки двумерного массива.
+// // Например, задан массив:
+// // 1 4 7 2
+// // 5 9 2 3
+// // 8 4 2 4
+// // В итоге получается вот такой массив:
+// // 7 4 2 1
+// // 9 5 3 2
+// // 8 4 4 2
+
+// Console.Write("Input quantity of rows of matrix: ");
+// int rows = Convert.ToInt32(Console.ReadLine());
+
+// Console.Write("Input quantity of columns of matrix: ");
+// int columns = Convert.ToInt32(Console.ReadLine());
+
+// System.Console.WriteLine();
+
+// int[,] array = GetArray(rows, columns);
+// PrintArray(array, "BasicArray");
+
+// int[,] ReverseMatrix(int[,] matrix)
+// {
+//     //int[,] result = new int[matrix.GetLength(0), matrix.GetLength(1)];
+
+//     for (int i = 0; i < matrix.GetLength(0); i++)
+//     {
+
+//         for (int j = 0; j < matrix.GetLength(1) - 1;)
+//         {
+
+//             if (matrix[i, j] < matrix[i, j + 1])
+//             {
+//                 int tempValue = matrix[i, j + 1];
+//                 matrix[i, j + 1] = matrix[i, j];
+//                 matrix[i, j] = tempValue;
+//                 j = 0;
+//             } else j++;
+
+//         }
+//     }
+//     return matrix;
+// }
+
+// PrintArray(ReverseMatrix(array), "ReverseMatrix");
 
 
 
@@ -52,10 +88,10 @@ void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
 // // 5 2 6 7
 // // Программа считает сумму элементов в каждой строке и выдаёт номер строки с наименьшей суммой элементов: 1 строка
 
-// Console.Write("Input quantity of rows: ");
+// Console.Write("Input quantity of rows of matrix: ");
 // int rows = Convert.ToInt32(Console.ReadLine());
 
-// Console.Write("Input quantity of columns: ");
+// Console.Write("Input quantity of columns of matrix: ");
 // int columns = Convert.ToInt32(Console.ReadLine());
 
 // System.Console.WriteLine();
@@ -98,10 +134,10 @@ void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
 // // 18 20
 // // 15 18
 
-// Console.Write("Input quantity of rows: ");
+// Console.Write("Input quantity of rows of matrix: ");
 // int rows = Convert.ToInt32(Console.ReadLine());
 
-// Console.Write("Input quantity of columns: ");
+// Console.Write("Input quantity of columns of matrix: ");
 // int columns = Convert.ToInt32(Console.ReadLine());
 
 // System.Console.WriteLine();
@@ -117,7 +153,7 @@ void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
 //     return;
 // }
 
-// int[,] MultiplicationMatrix(int[,] matrixOne, int[,] matrixTwo)
+// int[,] MultiplicationMatrix(int[,] matrixOne, int[,] matrixTwo) //Method for matrix multiplication
 // {
 //     int[,] multMatrix = new int[matrixOne.GetLength(0), matrixTwo.GetLength(1)];
 
@@ -148,7 +184,64 @@ void PrintArray(int[,] matrix, string nameofmatrix) // Print array method
 // 27(0,0,1) 90(0,1,1)
 // 26(1,0,1) 55(1,1,1)
 
+Console.Write("Input quantity of rows of matrix: ");
+int rows = Convert.ToInt32(Console.ReadLine());
 
+Console.Write("Input quantity of columns of matrix: ");
+int columns = Convert.ToInt32(Console.ReadLine());
+
+Console.Write("Input depth of matrix: ");
+int depth = Convert.ToInt32(Console.ReadLine());
+
+System.Console.WriteLine();
+
+int[,,] matrix = new int[rows, columns, depth];
+
+for (int i = 0; i < rows; i++) //Create random matrix
+{
+    for (int j = 0; j < columns; j++)
+    {
+        for (int k = 0; k < depth; k++)
+        {
+            matrix[i, j, k] = new Random().Next(10, 20);
+        }
+    }
+}
+
+/* TODO Сделать чтоб работала проверка на дубликаты массива. пока не работает=((((
+for (int i = 0; i < rows - 1;) // TODO Check dublicate
+{
+    for (int j = 0; j < columns - 1;)
+    {
+        for (int k = 0; k < depth - 1;)
+        {
+            if (matrix[i, j, k] == matrix[i + 1, j, k] || matrix[i, j, k] == matrix[i, j + 1, k] || matrix[i, j, k] == matrix[i, j + 1, k + 1])
+            {
+                matrix[i, j, k] = new Random().Next(10, 20);
+                i = 0;
+                j = 0;
+                k = 0;
+            }
+            else
+            {
+                k++; i++; j++;
+            }
+        }
+    }
+}
+*/
+
+    for (int k = 0; k < depth; k++) //Print matrix, view as task
+    {
+        for (int i = 0; i < rows; i++)
+        {
+            for (int j = 0; j < columns; j++)
+            {
+                Console.Write($" {matrix[i, j, k]} ({i}, {j}, {k})\t");
+            }
+            System.Console.WriteLine();
+        }
+    }
 
 
 // Задача 62. Напишите программу, которая заполнит спирально массив 4 на 4.
